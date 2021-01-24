@@ -1,49 +1,44 @@
 import base64
 
-print(" _____ _ _ _       _   ")
-print("| ____| | (_) ___ | |_ ")
-print("|  _| | | | |/ _ \| __|")
-print("| |___| | | | (_) | |_ ")
-print("|_____|_|_|_|\___/ \__|") 
-print("_______________________")
+def main():
 
-ask = raw_input('Decode and Encode : ')
-print('=================================')
-E = 'encode'
-D = 'decode'
+    ask = raw_input('Decode and Encode : ')
+    print('=================================')
+    E = ['encode', 'Encode', 'ENCODE']
+    D = ['decode', 'Decode', 'DECODE']
 
-#if ask == E:
-#    print('Error. enter (encode)or(decode)')
+    def encode():
+        print('here Encode')
+        print('============')
+        enex = raw_input('Enter Text To Encoding Base64: ')
+        encoded = base64.b64encode(enex)
+        print('_______________________')
+        print(encoded)
+        print('-----------------------')
 
-#if ask != D:
-#    print('Error. enter (encode)or(decode)')
+    def decode():
+        print('here Decode')
+        print('============')
+        deex = raw_input('Enter Base64 code To Decoding : ')
+        decoded = base64.b64decode(deex)
+        print('_______________________')
+        print(decoded)
+        print('-----------------------')
 
-def encode():
-    print('here Encode')
-    print('============')
-    enex = raw_input('Enter Text To Encoding Base64: ')
-    encoded = base64.b64encode(enex)
-    print('_______________________')
-    print encoded
-    print('-----------------------')
+    if ask in E:
+        encode()
+    if ask in D:
+        decode()
+        
 
-def decode():
-    print('here Decode')
-    print('============')
-    deex = raw_input('Enter Base64 code To Decoding : ')
-    decoded = base64.b64decode(deex)
-    print('_______________________')
-    print decoded
-    print('-----------------------')
+c1 = ['continue', 'Continue', 'c', 'edame']
 
-if ask == E:
-    encode()
-elif ask != E D:
-    #decode()
-    print('test')
+e0 = ['Exit', 'exit', 'ex', 'khroj']
 
-if ask == D:
-    encode()
-elif ask != D:
-    #decode()
-    print('test')
+while True:
+    ask2 = raw_input('Continue or Exit ? ')
+    if ask2 in c1:
+        main()   
+    if ask2 in e0:
+        exit()
+
